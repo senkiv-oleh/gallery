@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, FormEvent } from 'react';
+import { useState, useEffect, FormEvent } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import styles from './Navbar.module.scss';
@@ -23,6 +23,38 @@ export default function Navbar() {
   const searchParams = useSearchParams();
   const currentQuery = searchParams.get('query') || '';
   const [query, setQuery] = useState(currentQuery);
+  const [userName, setUserName] = useState<string | null>(null);
+
+  useEffect(() => {
+    const syncUser = () => {
+      const stored = localStorage.getItem('unsplash_user');
+      if (stored) {
+        try {
+          const parsed = JSON.parse(stored);
+          setUserName(parsed.name || null);
+        } catch {
+          setUserName(null);
+        }
+      } else {
+        setUserName(null);
+      }
+    };
+
+    syncUser();
+    window.addEventListener('auth-change', syncUser);
+    window.addEventListener('storage', syncUser);
+
+    return () => {
+      window.removeEventListener('auth-change', syncUser);
+      window.removeEventListener('storage', syncUser);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('unsplash_user');
+    setUserName(null);
+    window.dispatchEvent(new Event('auth-change'));
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -37,7 +69,7 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.navMain}>
-        <Link href="/" className={styles.logo} aria-label="Unsplash Home">
+        <Link href="/" className={styles.logo} aria-label="Gallery Home">
           <svg
             className={styles.logoIcon}
             width="32"
@@ -93,6 +125,22 @@ export default function Navbar() {
           <Link href="/" className={styles.exploreLink}>
             Explore
           </Link>
+          {userName ? (
+            <div className={styles.userBox}>
+              <span className={styles.userName}>{userName}</span>
+              <button
+                type="button"
+                onClick={handleLogout}
+                className={styles.logoutBtn}
+              >
+                Log out
+              </button>
+            </div>
+          ) : (
+            <Link href="/register" className={styles.authButton}>
+              Sign up
+            </Link>
+          )}
         </div>
       </div>
 

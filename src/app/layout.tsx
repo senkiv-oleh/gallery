@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar/Navbar';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Unsplash - Free High-Resolution Photos',
+  title: 'Gallery - High-Resolution Photos',
   description: 'Beautiful, free images and photos that you can download and use for any project.',
 };
 

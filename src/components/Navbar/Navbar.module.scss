@@ -122,7 +122,7 @@
 .navActions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-shrink: 0;
 
   .exploreLink {
@@ -139,6 +139,53 @@
 
     @media (max-width: 500px) {
       display: none;
+    }
+  }
+
+  .authButton {
+    font-size: 13px;
+    font-weight: 500;
+    color: #111111;
+    padding: 7px 14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-color: #111111;
+    }
+  }
+
+  .userBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .userName {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111111;
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  .logoutBtn {
+    font-size: 13px;
+    font-weight: 500;
+    color: #767676;
+    background: none;
+    border: 1px solid #d1d1d1;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      color: #111111;
+      border-color: #111111;
     }
   }
 }
