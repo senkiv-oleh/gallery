@@ -1,0 +1,187 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e1e1e1;
+  width: 100%;
+}
+
+.navMain {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #111111;
+  text-decoration: none;
+  flex-shrink: 0;
+
+  .logoIcon {
+    width: 28px;
+    height: 28px;
+    fill: #111111;
+  }
+
+  .logoText {
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .brandTitle {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .brandSubtitle {
+    font-size: 11px;
+    color: #767676;
+    font-weight: 400;
+  }
+}
+
+.searchForm {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #eeeeee;
+  border-radius: 24px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+
+  &:focus-within {
+    background-color: #ffffff;
+    border-color: #d1d1d1;
+    box-shadow: 0 0 0 1px #d1d1d1;
+  }
+
+  .searchButton {
+    background: none;
+    border: none;
+    padding: 10px 14px;
+    color: #767676;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: #111111;
+    }
+  }
+
+  .searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #111111;
+    padding: 8px 12px 8px 0;
+    font-family: inherit;
+
+    &::placeholder {
+      color: #767676;
+    }
+  }
+
+  .clearButton {
+    background: none;
+    border: none;
+    padding: 6px 12px;
+    color: #767676;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+
+    &:hover {
+      color: #111111;
+    }
+  }
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+
+  .exploreLink {
+    font-size: 14px;
+    font-weight: 500;
+    color: #767676;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: #111111;
+    }
+
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+}
+
+.topicsNav {
+  border-top: 1px solid #f0f0f0;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.topicsList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  max-width: 1440px;
+  margin: 0 auto;
+  list-style: none;
+
+  @media (max-width: 768px) {
+    padding: 8px 14px;
+    gap: 4px;
+  }
+}
+
+.topicItem {
+  display: inline-block;
+  padding: 6px 14px;
+  font-size: 13px;
+  color: #767676;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: all 0.15s ease;
+  font-weight: 500;
+
+  &:hover {
+    color: #111111;
+    background-color: #f5f5f5;
+  }
+}

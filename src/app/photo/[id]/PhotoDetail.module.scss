@@ -1,0 +1,236 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+
+  @media (max-width: 768px) {
+    padding: 16px 14px 60px;
+  }
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #555555;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #d1d1d1;
+  transition: all 0.15s ease;
+
+  &:hover {
+    color: #111111;
+    border-color: #111111;
+    background-color: #f7f7f7;
+  }
+}
+
+.authorCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+
+  .authorInfo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid #e1e1e1;
+    }
+
+    .authorMeta {
+      display: flex;
+      flex-direction: column;
+
+      .authorName {
+        font-size: 17px;
+        font-weight: 600;
+        color: #111111;
+      }
+
+      .authorUsername {
+        font-size: 13px;
+        color: #767676;
+      }
+
+      .authorBio {
+        font-size: 13px;
+        color: #555555;
+        margin-top: 2px;
+      }
+    }
+  }
+
+  .actionButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .likeBtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border: 1px solid #d1d1d1;
+      background-color: #ffffff;
+      color: #111111;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+
+      svg {
+        color: #e74c3c;
+      }
+
+      &:hover {
+        border-color: #111111;
+      }
+    }
+
+    .downloadBtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      background-color: #111111;
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.15s ease;
+
+      &:hover {
+        background-color: #333333;
+      }
+    }
+  }
+}
+
+.imageFrame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fafafa;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+  .mainImage {
+    max-width: 100%;
+    height: auto;
+    max-height: 85vh;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 24px;
+  background-color: #fcfcfc;
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  margin-bottom: 32px;
+
+  .statItem {
+    display: flex;
+    flex-direction: column;
+
+    .statLabel {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #767676;
+      margin-bottom: 4px;
+    }
+
+    .statValue {
+      font-size: 18px;
+      font-weight: 600;
+      color: #111111;
+    }
+  }
+}
+
+.descriptionBox {
+  margin-bottom: 32px;
+
+  .descriptionText {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+  }
+
+  .locationText {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #767676;
+  }
+}
+
+.tagsSection {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #eeeeee;
+
+  .tagsTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 16px;
+  }
+
+  .tagsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .tagPill {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #eeeeee;
+    color: #555555;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background-color: #111111;
+      color: #ffffff;
+    }
+  }
+}
